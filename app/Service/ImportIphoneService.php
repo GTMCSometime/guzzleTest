@@ -14,7 +14,7 @@ class ImportIphoneService {
         try {
             DB::beginTransaction();
 
-        $import = new ImportDataClient('iphone');
+        $import = new ImportDataClient('products','iphone');
         $response = $import->client->request('get');
         $data = (json_decode($response->getBody()->getContents()));
         foreach($data as $items) {
